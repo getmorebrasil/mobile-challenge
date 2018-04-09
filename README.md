@@ -7,7 +7,7 @@ Você foi contratado para desenvolver um aplicativo mobile. O aplicativo terá d
 
 ## Tela de mostrar uma lista de lojas  
 Para essa tela será fornecido uma que retorna uma lista de lojas, segue exemplo de um retorno: 
-```  
+```json  
 [
   {
     "name":"Ri Happy",
@@ -59,7 +59,7 @@ Disponível em http://challenge.getmore.com.br/stores
 
 ## Tela de mostrar detalhes de uma loja 
 Para essa tela será fornecido uma rota para detalhes de uma rede específica
-```
+```json
 {
   "id": "1",
   "name": "Ri Happy",
