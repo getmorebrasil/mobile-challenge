@@ -51,8 +51,7 @@ Para essa tela será fornecido uma que retorna uma lista de lojas, segue exemplo
       "Loja de Departamentos",
       "Moda e Acessórios"
     ]
-  },
-  ...
+  }
 ]
 ```
 Disponível em http://challenge.getmore.com.br/stores
