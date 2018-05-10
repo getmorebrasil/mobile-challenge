@@ -3,7 +3,7 @@
     <ion-page class="show-page">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Ionic 4 + Vue Application </ion-title>
+          <ion-title>Lojas</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="content" padding>
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     goToPage2 () {
-      this.$router.push('page2')
+      this.$router.push('/store')
     }
   }
 }

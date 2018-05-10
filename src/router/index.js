@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Page2 from '@/components/Page2'
+import StoreList from '@/components/StoreList'
+import Store from '@/components/Store'
 
 Vue.use(Router)
 
@@ -9,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'StoreList',
+      component: StoreList
     },
     {
-      path: '/page2',
-      name: 'Page 2',
-      component: Page2
+      path: '/store',
+      name: 'Store',
+      component: Store
     }
   ]
 })
