@@ -8,8 +8,8 @@
       </ion-header>
       <ion-content class="content" padding>
           <ion-list>
-            <ion-item v-for="item of items" v-bind:key="item.id">
-              <ion-label full>{{ item.name }}</ion-label>
+            <ion-item v-for="store of stores" v-bind:key="store.id">
+              <ion-label full>{{ store.name }}</ion-label>
             </ion-item>
           </ion-list>
       </ion-content>
@@ -25,12 +25,22 @@ export default {
   name: 'App',
   data () {
     return {
-      items: [{id: 0, name: 'Ahmed'}, {id: 1, name: 'Naima'}]
+      stores: null
     }
+  },
+  created () { // As soon as the instance is created, get stores from the API
+    this.getStores()
   },
   methods: {
     goToPage2 () {
       this.$router.push('/store')
+    },
+    getStores () {
+      let vm = this
+
+      this.$http.get('http://challenge.getmore.com.br/stores').then(response => {
+        vm.stores = response.body
+      })
     }
   }
 }
