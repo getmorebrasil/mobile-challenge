@@ -8,6 +8,10 @@ import router from './router'
 Vue.config.productionTip = false
 Vue.use(VueResource)
 
+/* Prevents Vue.js from complaining about Ionic elements */
+Vue.config.ignoredElements = ['ion-app', 'ion-page', 'ion-item', 'ion-label',
+  'ion-header', 'ion-toolbar', 'ion-title', 'ion-content', 'ion-list', 'ion-footer', 'ion-button']
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

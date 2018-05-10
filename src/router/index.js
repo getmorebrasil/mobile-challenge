@@ -13,9 +13,10 @@ export default new Router({
       component: StoreList
     },
     {
-      path: '/store',
+      path: '/store/:id',
       name: 'Store',
-      component: Store
+      component: Store,
+      props: true
     }
   ]
 })
