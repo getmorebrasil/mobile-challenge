@@ -1,6 +1,5 @@
 <template>
   <ion-app>
-    <ion-page class="show-page">
       <ion-header>
         <ion-toolbar>
           <ion-title>Lojas</ion-title>
@@ -14,7 +13,6 @@
             </ion-item>
           </ion-list>
       </ion-content>
-    </ion-page>
   </ion-app>
 </template>
 

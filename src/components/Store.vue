@@ -1,6 +1,5 @@
 <template>
   <ion-app>
-    <ion-page class="show-page">
       <ion-header>
         <ion-toolbar>
           <ion-title>{{ store.name }}</ion-title>
@@ -23,7 +22,6 @@
       <ion-footer>
         <ion-button @click="goHome" full>Voltar</ion-button>
       </ion-footer>
-    </ion-page>
   </ion-app>
 </template>
 
