@@ -1,27 +1,27 @@
 <template>
   <ion-app>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>{{ store.name }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="content" padding>
-        <ion-label>Nota: {{ store.rating }}</ion-label>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ store.name }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="content" padding>
+      <ion-label>Nota: {{ store.rating }}</ion-label>
 
-        <!-- TODO: This requires inapp-browser for Cordova, check vue-cordosa to use it -->
-        <ion-button href="store.url">Acessar loja</ion-button>
+      <!-- TODO: This requires inapp-browser for Cordova, check vue-cordosa to use it -->
+      <ion-button href="store.url">Acessar loja</ion-button>
 
-        <ion-label>Categoria(s):</ion-label>
+      <ion-label>Categoria(s):</ion-label>
         <!-- <ion-scroll>
           <ion-list>
             <ion-item v-for="item of store.category" v-bind:key="item">{{ item }}</ion-item>
           </ion-list>
         </ion-scroll> -->
 
-      </ion-content>
-      <ion-footer>
-        <ion-button @click="goHome" full>Voltar</ion-button>
-      </ion-footer>
+    </ion-content>
+    <ion-footer>
+      <ion-button @click="goHome" full>Voltar</ion-button>
+    </ion-footer>
   </ion-app>
 </template>
 

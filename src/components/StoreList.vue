@@ -1,18 +1,18 @@
 <template>
   <ion-app>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Lojas</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="content" padding>
-          <ion-list>
-            <ion-item v-for="store of stores" v-bind:key="store.id">
-              <ion-label full>{{ store.name }}</ion-label>
-              <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
-            </ion-item>
-          </ion-list>
-      </ion-content>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Lojas</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="content" padding>
+        <ion-list>
+          <ion-item v-for="store of stores" v-bind:key="store.id">
+            <ion-label full>{{ store.name }}</ion-label>
+            <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
+          </ion-item>
+        </ion-list>
+    </ion-content>
   </ion-app>
 </template>
 
