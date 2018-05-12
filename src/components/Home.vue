@@ -6,22 +6,25 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="content" padding v-if='apiReached == -1'>
-      <p><i class="fa fa-5x fa-ellipsis-h"></i></p>
-      <p>Buscando lojas, aguarde um momento...</p>
-    </ion-content>
+    <ion-content class="content" padding>
 
-    <ion-content class="content" padding v-if='apiReached == 0'>
-      <p><i class='fa fa-5x fa-wifi'></i></p>
-      <p>Não foi possível encontrar as lojas, verifique a sua conexão de internet!</p>
-    </ion-content>
+      <template v-if='apiReached == -1'>
+        <p><i class="fa fa-5x fa-ellipsis-h"></i></p>
+        <p>Buscando lojas, aguarde um momento...</p>
+      </template>
 
-    <ion-content class="content" padding v-else>
+      <template v-if='apiReached == 0'>
+        <p><i class='fa fa-5x fa-wifi'></i></p>
+        <p>Não foi possível encontrar as lojas, verifique a sua conexão de internet!</p>
+      </template>
+
+      <template v-else>
         <ion-list>
-          <ion-item v-for="store of stores" v-bind:key="store.id" style="padding-bottom: 15px">
+          <ion-item v-for="store of stores" v-bind:key="store.id"
+            style="padding-bottom: 15px; text-align: center;">
             <img @click='checkStore(store.id)'
               v-bind:src="store.image_blob" onerror="src='/static/empty-logo.png'"
-              style="text-align: center;">
+              width=120 height=60 style="text-align: center;">
 
             <div style="padding-left: 10px">
               <p style="text-align: center">{{ store.name }}</p>
@@ -30,8 +33,9 @@
             </div>
           </ion-item>
         </ion-list>
-    </ion-content>
+      </template>
 
+    </ion-content>
   </ion-app>
 </template>
 
@@ -47,13 +51,17 @@ export default {
   created () { // As soon as the instance is created, get stores from the API
     let vm = this
 
-    this.$http.get('http://challenge.getmore.com.br/stores', {'timeout': 3000}).then(
+    this.$http.get('http://challenge.getmore.com.br/stores', {'timeout': 5000}).then(
       response => { // SUCCESSFUL
-        vm.stores = response.body
-        vm.apiReached = 1
+        vm.$nextTick(function () {
+          vm.stores = response.body
+          vm.apiReached = 1
+        })
       },
       response => { // ERROR
-        vm.apiReached = 0
+        vm.$nextTick(function () {
+          vm.apiReached = 0
+        })
       })
   },
   methods: {

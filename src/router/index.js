@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import StoreList from '@/components/StoreList'
+import Home from '@/components/Home'
 import Store from '@/components/Store'
 
 Vue.use(Router)
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'StoreList',
-      component: StoreList
+      name: 'Home',
+      component: Home
     },
     {
       path: '/store/:id',

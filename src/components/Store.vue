@@ -8,7 +8,8 @@
       </ion-header>
 
       <ion-content class="content" padding>
-        <img v-bind:src="store.image_blob" onerror="src='/static/empty-logo.png'">
+        <img v-bind:src="store.image_blob" width=120 height=60
+          onerror="src='/static/empty-logo.png'">
 
         <ion-item style="margin-bottom: -15px;">
           <ion-label style="text-align: center">Nota:</ion-label>
