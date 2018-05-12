@@ -7,11 +7,13 @@
     </ion-header>
 
     <ion-content class="content" padding v-if='apiReached == -1'>
-        Buscando lojas, aguarde um momento...
+      <p><i class="fa fa-5x fa-ellipsis-h"></i></p>
+      Buscando lojas, aguarde um momento...
     </ion-content>
 
     <ion-content class="content" padding v-if='apiReached == 0'>
-        Não foi possível buscar as lojas, verifique a sua conexão de internet!
+      <p><i class='fa fa-5x fa-wifi'></i></p>
+      Não foi possível buscar as lojas, verifique a sua conexão de internet!
     </ion-content>
 
     <ion-content class="content" padding v-else>
