@@ -1,6 +1,34 @@
 <template>
   <ion-app>
-    <template v-if="store != null"> <!-- Only happens if (apiReached == 1) -->
+    <template v-if="apiReached == -1">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Lojas</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="content" padding>
+        <p><i class="fa fa-5x fa-ellipsis-h"></i></p>
+        <p>Buscando informações da loja, aguarde um momento...</p>
+      </ion-content>
+    </template>
+
+    <template v-if="apiReached == 0">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>...</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="content" padding>
+        <p><i class='fa fa-5x fa-wifi'></i></p>
+        <p>Não foi possível encontrar as informações da loja, verifique a sua conexão de internet!</p>
+      </ion-content>
+      <ion-footer>
+        <ion-button @click="refreshPage" full>Recarregar</ion-button>
+      </ion-footer>
+    </template>
+
+    <template v-if="(apiReached == 1 && store != null)"> <!-- Only happens if (apiReached == 1) -->
       <ion-header>
         <ion-toolbar>
           <ion-title>{{ store.name }}</ion-title>
@@ -34,42 +62,6 @@
         <ion-button v-bind:href="store.url">Acessar loja</ion-button>
       </ion-footer>
     </template>
-
-    <template v-if="apiReached == 0">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>...</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="content" padding>
-        <p><i class='fa fa-5x fa-wifi'></i></p>
-        <p>Não foi possível encontrar as informações da loja, verifique a sua conexão de internet!</p>
-      </ion-content>
-      <ion-footer>
-        <ion-button @click="refreshPage" full>Recarregar</ion-button>
-      </ion-footer>
-    </template>
-
-    <!-- <template v-else>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>...</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <ion-content class="content" padding v-if='apiReached == -1'>
-        <p><i class="fa fa-5x fa-ellipsis-h"></i></p>
-        <p>Buscando informações da loja, aguarde um momento...</p>
-      </ion-content>
-
-      <ion-content class="content" padding v-else>
-        <p><i class='fa fa-5x fa-wifi'></i></p>
-        <p>Não foi possível encontrar as informações da loja, verifique a sua conexão de internet!</p>
-      </ion-content>
-      <ion-footer>
-        <ion-button @click="goHome" full>Voltar</ion-button>
-      </ion-footer>
-    </template> -->
   </ion-app>
 </template>
 
@@ -98,8 +90,10 @@ export default {
       this.$http.get(`http://challenge.getmore.com.br/stores/${this.$route.params.id}`, {'timeout': 3000})
         .then(
           response => {
-            vm.store = response.body
             vm.apiReached = 1
+            vm.$nextTick(() => {
+              vm.store = response.body
+            })
           },
           response => {
             vm.apiReached = 0
