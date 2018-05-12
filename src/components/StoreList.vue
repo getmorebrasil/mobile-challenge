@@ -19,7 +19,9 @@
     <ion-content class="content" padding v-else>
         <ion-list>
           <ion-item v-for="store of stores" v-bind:key="store.id" style="padding-bottom: 15px">
-            <img @click='checkStore(store.id)' v-bind:src="store.image_blob" style="text-align: center;">
+            <img @click='checkStore(store.id)'
+              v-bind:src="store.image_blob" onerror="src='/static/empty-logo.png'"
+              style="text-align: center;">
 
             <div style="padding-left: 10px">
               <p style="text-align: center">{{ store.name }}</p>
