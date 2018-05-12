@@ -39,6 +39,10 @@
       </template>
 
     </ion-content>
+
+    <ion-footer v-if='apiReached == 0'>
+        <ion-button @click="refreshPage" full>Recarregar</ion-button>
+      </ion-footer>
   </ion-app>
 </template>
 
@@ -70,6 +74,9 @@ export default {
   methods: {
     checkStore (id) {
       this.$router.push(`/store/${id}`)
+    },
+    refreshPage () {
+      this.$router.go(this.$router.currentRoute)
     }
   }
 }

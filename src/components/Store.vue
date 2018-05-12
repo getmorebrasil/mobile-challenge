@@ -16,7 +16,7 @@
     <template v-if="apiReached == 0">
       <ion-header>
         <ion-toolbar>
-          <ion-title>...</ion-title>
+          <ion-title>Loja</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="content" padding>
@@ -91,6 +91,8 @@ export default {
         .then(
           response => {
             vm.apiReached = 1
+
+            /* Prevents model updating errors */
             vm.$nextTick(() => {
               vm.store = response.body
             })
