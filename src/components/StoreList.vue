@@ -5,7 +5,16 @@
         <ion-title>Lojas</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="content" padding>
+
+    <ion-content class="content" padding v-if='apiReached == -1'>
+        Buscando lojas, aguarde um momento...
+    </ion-content>
+
+    <ion-content class="content" padding v-if='apiReached == 0'>
+        Não foi possível buscar as lojas, verifique a sua conexão de internet!
+    </ion-content>
+
+    <ion-content class="content" padding v-else>
         <ion-list>
           <ion-item v-for="store of stores" v-bind:key="store.id">
             <ion-label full>{{ store.name }}</ion-label>
@@ -13,6 +22,7 @@
           </ion-item>
         </ion-list>
     </ion-content>
+
   </ion-app>
 </template>
 
@@ -21,19 +31,24 @@ export default {
   name: 'App',
   data () {
     return {
-      stores: null
+      stores: null,
+      apiReached: -1
     }
   },
   created () { // As soon as the instance is created, get stores from the API
     let vm = this
 
-    this.$http.get('http://challenge.getmore.com.br/stores').then(response => {
-      vm.stores = response.body
-    })
+    this.$http.get('http://challenge.getmore.com.br/stores', {'timeout': 3000}).then(
+      response => { // SUCCESSFUL
+        vm.stores = response.body
+        vm.apiReached = 1
+      },
+      response => { // ERROR
+        vm.apiReached = 0
+      })
   },
   methods: {
     checkStore (id) {
-      console.log(`Clicked on store id ${id}`)
       this.$router.push(`/store/${id}`)
     }
   }
