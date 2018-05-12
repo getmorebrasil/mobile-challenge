@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 Vue.use(VueResource)
 
 /* Prevents Vue.js from complaining about Ionic elements */
-Vue.config.ignoredElements = ['ion-app', 'ion-page', 'ion-item', 'ion-label',
+Vue.config.ignoredElements = ['ion-app', 'ion-page', 'ion-item', 'ion-img', 'ion-label',
   'ion-header', 'ion-toolbar', 'ion-title', 'ion-content', 'ion-list', 'ion-footer', 'ion-button']
 
 /* eslint-disable no-new */
