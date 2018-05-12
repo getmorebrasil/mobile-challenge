@@ -35,6 +35,21 @@
       </ion-footer>
     </template>
 
+    <template v-if="apiReached == 0">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>...</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="content" padding>
+        <p><i class='fa fa-5x fa-wifi'></i></p>
+        <p>Não foi possível encontrar as informações da loja, verifique a sua conexão de internet!</p>
+      </ion-content>
+      <ion-footer>
+        <ion-button @click="refreshPage" full>Recarregar</ion-button>
+      </ion-footer>
+    </template>
+
     <!-- <template v-else>
       <ion-header>
         <ion-toolbar>
@@ -73,6 +88,9 @@ export default {
   methods: {
     goHome () {
       this.$router.push('/')
+    },
+    refreshPage () {
+      this.$router.go(this.$router.currentRoute)
     },
     getData () {
       let vm = this
