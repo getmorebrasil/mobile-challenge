@@ -9,14 +9,16 @@
 
       <ion-content class="content" padding>
         <img v-bind:src="store.image_blob">
-        <ion-label>Nota:</ion-label>
-        <ion-label style="font-size: 24px"><b>{{ store.rating }}</b></ion-label>
 
-        <ion-label>Takeback:</ion-label>
-        <ion-label style="font-size: 24px"><b>{{ parseFloat(store.takeback).toFixed(2) }}</b></ion-label>
+        <ion-item style="margin-bottom: -15px;">
+          <ion-label style="text-align: center">Nota:</ion-label>
+          <ion-label style="text-align: center">Takeback:</ion-label>
+        </ion-item>
 
-        <!-- TODO: This requires inapp-browser for Cordova, check vue-cordosa to use it -->
-        <ion-button v-bind:href="store.url">Acessar loja</ion-button>
+        <ion-item>
+          <ion-label style="font-size: 24px; text-align: center;"><b>{{ store.rating }}</b></ion-label>
+          <ion-label style="font-size: 24px; text-align: center;"><b>{{ parseFloat(store.takeback).toFixed(2) }}</b></ion-label>
+        </ion-item>
 
         <ion-label>Categoria(s):</ion-label>
 
@@ -28,6 +30,7 @@
       </ion-content>
       <ion-footer>
         <ion-button @click="goHome" full>Voltar</ion-button>
+        <ion-button v-bind:href="store.url">Acessar loja</ion-button>
       </ion-footer>
     </template>
 

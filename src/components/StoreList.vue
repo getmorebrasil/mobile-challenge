@@ -18,9 +18,14 @@
 
     <ion-content class="content" padding v-else>
         <ion-list>
-          <ion-item v-for="store of stores" v-bind:key="store.id">
-            <ion-label full>{{ store.name }}</ion-label>
-            <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
+          <ion-item v-for="store of stores" v-bind:key="store.id" style="padding-bottom: 15px">
+            <img @click='checkStore(store.id)' v-bind:src="store.image_blob" style="text-align: center;">
+
+            <div style="padding-left: 10px">
+              <p style="text-align: center">{{ store.name }}</p>
+              <p style="text-align: center">(Takeback: {{ parseFloat(store.takeback).toFixed(2) }})</p>
+              <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
+            </div>
           </ion-item>
         </ion-list>
     </ion-content>
