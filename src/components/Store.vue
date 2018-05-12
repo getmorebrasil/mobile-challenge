@@ -1,6 +1,6 @@
 <template>
   <ion-app>
-    <template v-if="store != null">
+    <template v-if="store != null"> <!-- Only happens if (apiReached == 1) -->
       <ion-header>
         <ion-toolbar>
           <ion-title>{{ store.name }}</ion-title>
@@ -8,17 +8,17 @@
       </ion-header>
 
       <ion-content class="content" padding>
-        <img v-bind:src="store.image_blob" width=120 height=60
+        <img v-bind:src="store.image_blob" class="thumbnail"
           onerror="src='/static/empty-logo.png'">
 
-        <ion-item style="margin-bottom: -15px;">
-          <ion-label style="text-align: center">Nota:</ion-label>
-          <ion-label style="text-align: center">Takeback:</ion-label>
+        <ion-item class="margin-b-minus15">
+          <ion-label class="text-center">Nota:</ion-label>
+          <ion-label class="text-center">Takeback:</ion-label>
         </ion-item>
 
         <ion-item>
-          <ion-label style="font-size: 24px; text-align: center;"><b>{{ store.rating }}</b></ion-label>
-          <ion-label style="font-size: 24px; text-align: center;"><b>{{ parseFloat(store.takeback).toFixed(2) }}</b></ion-label>
+          <ion-label class="text-center bigger-text"><b>{{ store.rating }}</b></ion-label>
+          <ion-label class="text-center bigger-text"><b>{{ parseFloat(store.takeback).toFixed(2) }}</b></ion-label>
         </ion-item>
 
         <ion-label>Categoria(s):</ion-label>

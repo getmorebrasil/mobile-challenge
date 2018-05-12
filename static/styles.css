@@ -1,0 +1,28 @@
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+.margin-b-minus15 {
+    margin-bottom: -15px;
+}
+
+.padding-b-15 {
+    padding-bottom: 15px;
+}
+
+.bigger-text {
+    font-size: 24px;
+}
+
+.p-left-10 {
+    padding-left: 10px;
+}
+
+.thumbnail {
+    width: 120px;
+    height: 60px;
+}

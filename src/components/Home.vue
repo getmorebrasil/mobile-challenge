@@ -19,17 +19,17 @@
       </template>
 
       <template v-else>
-        <ion-list style="display: flex; justify-content: center;">
+        <ion-list class="flex-center">
           <div>
               <ion-item v-for="store of stores" v-bind:key="store.id"
-                style="padding-bottom: 15px; text-align: center;">
+                class="padding-b-15">
               <img @click='checkStore(store.id)'
                 v-bind:src="store.image_blob" onerror="src='/static/empty-logo.png'"
-                width=120 height=60 style="text-align: center;">
+                class="thumbnail">
 
-              <div style="padding-left: 10px">
-                <p style="text-align: center">{{ store.name }}</p>
-                <p style="text-align: center">(Takeback: {{ parseFloat(store.takeback).toFixed(2) }})</p>
+              <div class="p-left-10">
+                <p class="text-center">{{ store.name }}</p>
+                <p class="text-center">(Takeback: {{ parseFloat(store.takeback).toFixed(2) }})</p>
                 <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
               </div>
             </ion-item>
