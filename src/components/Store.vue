@@ -12,8 +12,11 @@
         <ion-label>Nota:</ion-label>
         <ion-label style="font-size: 24px"><b>{{ store.rating }}</b></ion-label>
 
+        <ion-label>Takeback:</ion-label>
+        <ion-label style="font-size: 24px"><b>{{ parseFloat(store.takeback).toFixed(2) }}</b></ion-label>
+
         <!-- TODO: This requires inapp-browser for Cordova, check vue-cordosa to use it -->
-        <ion-button href="store.url">Acessar loja</ion-button>
+        <ion-button v-bind:href="store.url">Acessar loja</ion-button>
 
         <ion-label>Categoria(s):</ion-label>
 
