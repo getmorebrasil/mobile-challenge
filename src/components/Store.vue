@@ -8,6 +8,7 @@
       </ion-header>
 
       <ion-content class="content" padding>
+        <img v-bind:src="store.image_blob">
         <ion-label>Nota:</ion-label>
         <ion-label style="font-size: 24px"><b>{{ store.rating }}</b></ion-label>
 
