@@ -15,7 +15,9 @@ Me incomodei bastante utilizando o Vue.js para construir o aplicativo, tive vár
 #### Etapas iniciais
 * Instale o npm na máquina (caso ainda não tenha feito);
 * Instale o Cordova através do npm com `npm i -g cordova` (Windows) ou `sudo npm i -g cordova` (Linux);
-* Clone esse repositório e instale as dependências do Cordova rodando `npm i` no diretório raiz;
+* Clone esse repositório;
+* Rode o comando `cordova platform add android` no diretório raíz para habilitar a exportação da aplicação para Android;
+* Instale as dependências do Cordova rodando `npm i` no diretório raiz;
 * Entre na pasta "app" e instale também as suas dependências rodando `npm i`.
 
 #### Rodando no computador
