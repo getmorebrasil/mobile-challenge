@@ -1,6 +1,10 @@
 .DS_Store
+.gradle/
+plugins/
 node_modules/
-/dist/
+app/node_modules/
+platforms/
+www/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
