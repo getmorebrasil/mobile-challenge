@@ -1,8 +1,10 @@
 # Desafio mobile da GETMORE
 
 ### Descrição
+Aplicativo que busca lojas de uma API e mostra as suas informações na tela, desenvolvido com Vue.js, Ionic e Cordova e utilizando Webpack.
 
 ### Considerações
+Me incomodei bastante utilizando o Vue.js para construir o aplicativo, tive vários problemas para fazer o framework se comportar corretamente e tarefas que deveriam ser simples (como tratar os erros de rede) acabaram ficando com uma lógica um pouco confusa no código. Numa próxima vez tentarei utilizar React Native.
 
 ### Screenshots
 
@@ -11,7 +13,8 @@
 ### Instruções de uso
 
 #### Etapas iniciais
-* Instale o NPM na máquina (caso ainda não tenha feito);
+* Instale o npm na máquina (caso ainda não tenha feito);
+* Instale o Cordova através do npm com `npm i -g cordova` (Windows) ou `sudo npm i -g cordova` (Linux);
 * Clone o repositório e instale as dependências do Cordova rodando `npm i` no diretório raiz;
 * Entre na pasta "app" e instale também as suas dependências rodando `npm i`.
 
@@ -21,7 +24,7 @@
 
 #### Rodando no Android
 * Entre na pasta "app" e rode o comando `npm run build` para gerar os arquivos da aplicação;
-* Presumindo que você já tenha realizado as configurações da Android SDK e do seu smartphone no computador, basta rodar o comando `cordova run android --device` no diretório raiz (acima do "app") e a aplicação será executada no dispositivo.
+* Presumindo que você já tenha realizado as configurações da Android SDK e do seu smartphone no computador, basta abrir o diretório raíz (acima do "app") e rodar o comando `cordova run android --device`, a aplicação será então executada no dispositivo.
 
 ### Requisitos
 
