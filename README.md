@@ -6,7 +6,7 @@
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/1.jpg" height="384" style="padding-right: 5px"><img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/2.jpg" height="384" style="padding-right: 5px"><img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/3.jpg" height="384" style="padding-right: 5px"><img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/4.jpg" height="384" style="padding-right: 5px"><img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/5.jpg" height="384" style="padding-right: 5px">
+<img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/1.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/2.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/3.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/4.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/5.jpg" height="384">
 
 ### Instruções de uso
 
