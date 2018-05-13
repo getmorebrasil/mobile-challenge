@@ -37,7 +37,7 @@
 
       <ion-content class="content" padding>
         <img v-bind:src="store.image_blob" class="thumbnail"
-          onerror="src='/static/empty-logo.png'">
+          onerror="src='static/empty-logo.png'">
 
         <ion-item class="margin-b-minus15">
           <ion-label class="text-center">Nota:</ion-label>

@@ -24,7 +24,7 @@
               <ion-item v-for="store of stores" v-bind:key="store.id"
                 class="padding-b-15">
               <img @click='checkStore(store.id)'
-                v-bind:src="store.image_blob" onerror="src='/static/empty-logo.png'"
+                v-bind:src="store.image_blob" onerror="src='static/empty-logo.png'"
                 class="thumbnail">
 
               <div class="p-left-10">
