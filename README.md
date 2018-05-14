@@ -37,7 +37,7 @@ Me incomodei bastante utilizando o Vue.js para construir o aplicativo, tive vár
 - [x] Dispor todos os dados (exceto o id) servidos pelo servidor;
 - [x] Tratar erros de rede;
 - [x] Criar um Readme com uma breve descrição do projeto e de como rodar;
-- [ ] (Adicional) Permitir ao usuário a ordenar as lojas com qualquer um de seus atributos;
+- [x] (Adicional) Permitir ao usuário a ordenar as lojas com qualquer um de seus atributos;
 - [ ] (Adicional) Filtragem de atributos de loja;
 - [ ] (Adicional) Responsivo para celulares e tablets;
 - [ ] (Adicional) Caching de dados.

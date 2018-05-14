@@ -23,14 +23,15 @@
           <div>
               <ion-item v-for="store of stores" v-bind:key="store.id"
                 class="padding-b-15">
-              <img @click='checkStore(store.id)'
-                v-bind:src="store.image_blob" onerror="src='static/empty-logo.png'"
+
+                <img @click='checkStore(store.id)'
+                  v-bind:src="store.image_blob" onerror="src='static/empty-logo.png'"
                 class="thumbnail">
 
-              <div class="p-left-10">
-                <p class="text-center">{{ store.name }}</p>
-                <p class="text-center">(Takeback: {{ parseFloat(store.takeback).toFixed(2) }})</p>
-                <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
+                <div class="p-left-10">
+                  <p class="text-center">{{ store.name }}</p>
+                  <p class="text-center">(Takeback: {{ parseFloat(store.takeback).toFixed(2) }})</p>
+                  <ion-button @click='checkStore(store.id)'>+ Informações</ion-button>
               </div>
             </ion-item>
           </div>
@@ -41,8 +42,13 @@
     </ion-content>
 
     <ion-footer v-if='apiReached == 0'>
-        <ion-button @click="refreshPage" full>Recarregar</ion-button>
-      </ion-footer>
+      <ion-button @click="refreshPage" full>Recarregar</ion-button>
+    </ion-footer>
+
+    <ion-footer v-if='apiReached == 1'>
+      <ion-button @click='orderAlphabetically'>Ordem Alfabética</ion-button>
+      <ion-button @click='orderTakeback'>Por Takeback</ion-button>
+    </ion-footer>
   </ion-app>
 </template>
 
@@ -52,7 +58,9 @@ export default {
   data () {
     return {
       stores: null,
-      apiReached: -1
+      apiReached: -1,
+      alphabetical: true, // Ascending or descending
+      byTakeback: true // Ascending or descending
     }
   },
   created () { // As soon as the instance is created, get stores from the API
@@ -77,6 +85,54 @@ export default {
     },
     refreshPage () {
       this.$router.go(this.$router.currentRoute)
+    },
+    orderAlphabetically () {
+      let vm = this
+
+      function compare (a, b) {
+        if (a.name < b.name) {
+          if (vm.alphabetical) {
+            return -1
+          } else {
+            return 1
+          }
+        }
+        if (a.name > b.name) {
+          if (vm.alphabetical) {
+            return 1
+          } else {
+            return -1
+          }
+        }
+        return 0
+      }
+
+      this.stores.sort(compare)
+      this.alphabetical = !this.alphabetical
+    },
+    orderTakeback () {
+      let vm = this
+
+      function compare (a, b) {
+        if (a.takeback < b.takeback) {
+          if (vm.byTakeback) {
+            return -1
+          } else {
+            return 1
+          }
+        }
+        if (a.takeback > b.takeback) {
+          if (vm.byTakeback) {
+            return 1
+          } else {
+            return -1
+          }
+        }
+        return 0
+      }
+
+      this.stores.sort(compare)
+      this.byTakeback = !this.byTakeback
     }
   }
 }
