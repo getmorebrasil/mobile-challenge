@@ -6,6 +6,10 @@ Aplicativo que busca lojas de uma API e mostra as suas informações na tela, de
 ### Considerações
 Me incomodei bastante utilizando o Vue.js para construir o aplicativo, tive vários problemas para fazer o framework se comportar corretamente e tarefas que deveriam ser simples (como tratar os erros de rede) acabaram ficando com uma lógica um pouco confusa no código. Numa próxima vez tentarei utilizar React Native.
 
+### Problemas conhecidos
+- Algumas vezes a tela de "verifique sua conexão" não mostra a sua mensagem mas mostra o botão de "recarregar", mesmo a condição dos dois eventos sendo a mesma;
+- No Android, a tela treme algumas vezes ao carregar a tela principal.
+
 ### Screenshots
 
 <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/1.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/2.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/3.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/4.jpg" height="384"> <img src="https://raw.githubusercontent.com/telmotrooper/mobile-challenge/master/screenshots/5.jpg" height="384">
