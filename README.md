@@ -1,10 +1,10 @@
 # Desafio mobile da GETMORE
 
 ### Descrição
-Aplicativo que busca lojas de uma API e mostra as suas informações na tela, desenvolvido com Vue.js, Ionic e Cordova e utilizando Webpack.
+Aplicativo que busca lojas de uma API e mostra as suas informações na tela, desenvolvido com Vue.js, Ionic e Cordova e utilizando Webpack. O código do app está na pasta `app/src`.
 
 ### Considerações
-Me incomodei bastante utilizando o Vue.js para construir o aplicativo, tive vários problemas para fazer o framework se comportar corretamente e tarefas que deveriam ser simples (como tratar os erros de rede) acabaram ficando com uma lógica um pouco confusa no código. Numa próxima vez tentarei utilizar React Native.
+Me incomodei bastante utilizando o Vue.js para construir o aplicativo, tive vários problemas para fazer o framework se comportar corretamente. Tarefas que deveriam ser simples, como tratar os erros de rede, acabaram ficando com uma lógica confusa no template, pois o simples "if, else if e else" gerava erros na renderização. Numa próxima vez tentarei utilizar React Native.
 
 ### Problemas conhecidos
 - Algumas vezes a tela de "verifique sua conexão" não mostra a sua mensagem mas mostra o botão de "recarregar", mesmo a condição dos dois eventos sendo a mesma;
