@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 import LoadingSection from '../components/LoadingSection';
+import LojaParaLista from '../components/LojaParaLista';
+import Footer from '../components/Footer';
 
 class LojasListScreen extends Component {
     static navigationOptions = {
@@ -27,16 +29,30 @@ class LojasListScreen extends Component {
             return <LoadingSection />
         }
 
-        
+        const lojas = [];
+        for (const loja of this.props.lista) {
+            lojas.push(<LojaParaLista key={loja.id} loja={loja} onPress={this.onPressLoja.bind(this)}/>);
+        }
+
+        return lojas;
     }
-  
+
+    onPressLoja(id) {
+        this.props.getID(id);
+    }
 
     render() {
-        console.log(this.props);
+        
         return (
-            <ScrollView style={{flex: 1}}>
-            {this.renderList()}
-            </ScrollView>
+            <View style={{flex: 1}}>
+                <ScrollView style={{flex: 1}}>
+                    {this.renderList()}
+                </ScrollView>
+                <Footer 
+                    label={'Aperta na loja para ver mais'}
+                    style={{position: 'absolute', bottom: 0}}
+                />
+            </View>
         );
     }
 }

@@ -4,3 +4,10 @@ export const getLista = (lojas) => {
         payload: lojas
     };
 };
+
+export const getID = (id) => {
+    return {
+        type: 'select-id',
+        payload: id
+    };
+};

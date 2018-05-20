@@ -16,7 +16,8 @@ const styles = {
     containerStyle: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        margin: 20
     },
     titleStyle: {
         fontSize: 20,
