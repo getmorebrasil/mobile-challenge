@@ -1,0 +1,3 @@
+rootProject.name = 'GetmoreMobileChallenge'
+
+include ':app'
