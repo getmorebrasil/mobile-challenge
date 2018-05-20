@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-const LojaParaLista = (props) => {
-    const { containerStyle, imageStyle, titleStyle, textStyle } = styles;
+const LojaInfo = (props) => {
+    const { containerStyle, imageStyle, titleStyle, textStyle, buttonStyle, buttonText, ratingStyle } = styles;
     
     return (
-        <TouchableOpacity  
-            style={containerStyle}
-            onPress={() => props.onPress(props.loja.id)}
-        >
+        <View style={containerStyle}>
+        <Text style={ratingStyle}>rating: {props.loja.rating}</Text>
             <Text style={titleStyle}>{props.loja.name}</Text>
             <Image
                 style={imageStyle}
                 source={{uri: props.loja.image_blob}}
             />
             <Text style={textStyle}>Takeback: {props.loja.takeback.toFixed(2)}%</Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={buttonStyle}>
+                <Text style={buttonText}>Visitar o site</Text>
+            </TouchableOpacity>
+        </View>
     );
 }
 
@@ -40,13 +41,30 @@ const styles = {
         height: 100
     },
     titleStyle: {
-        fontSize: 25,
+        fontSize: 40,
         color: '#404040'
     },
     textStyle: {
-        fontSize: 25,
+        fontSize: 30,
         color: '#404040'
+    },
+    buttonStyle: {
+        margin: 10,
+        padding: 15,
+        borderWidth: 1,
+        borderRadius: 8,
+        backgroundColor: '#404040',
+        shadowColor: 'black',
+        shadowOffset: {width: 3, height: 3},
+        shadowOpacity: 0.4        
+    },
+    buttonText: {
+        color: '#e6e6e6',
+        fontSize: 17,
+    },
+    ratingStyle: {
+        alignSelf: 'flex-end'
     }
 }
 
-export default LojaParaLista;
+export default LojaInfo;

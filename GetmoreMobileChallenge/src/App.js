@@ -5,9 +5,11 @@ import { createStore } from 'redux';
 
 import reducers from './reducers';
 import LojasListScreen from './screens/LojasListScreen';
+import LojaScreen from './screens/LojaScreen';
 
 const Stack = createStackNavigator({
-    ListaLojas : { screen: LojasListScreen }
+    ListaLojas : { screen: LojasListScreen },
+    Loja: { screen: LojaScreen }
 });
 
 export default class App extends Component {

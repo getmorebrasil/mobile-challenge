@@ -39,10 +39,11 @@ class LojasListScreen extends Component {
 
     onPressLoja(id) {
         this.props.getID(id);
+        this.props.navigation.navigate('Loja');
     }
 
     render() {
-        
+
         return (
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}>
