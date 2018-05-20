@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import reducers from './reducers';
-import LojasListScreen from './components/LojasListScreen';
+import LojasListScreen from './screens/LojasListScreen';
 
-const Stack = StackNavigator({
+const Stack = createStackNavigator({
     ListaLojas : { screen: LojasListScreen }
 });
 

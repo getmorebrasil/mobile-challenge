@@ -1,3 +1,8 @@
 export default (state = null, action) => {
-    return state;
+    switch(action.type) {
+        case 'fetch-lojas':
+            return action.payload;
+        default:
+            return state;
+    }
 }
