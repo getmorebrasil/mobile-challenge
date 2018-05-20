@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 
 const LojaInfo = (props) => {
     const { containerStyle, imageStyle, titleStyle, textStyle, buttonStyle, buttonText, ratingStyle } = styles;
@@ -13,7 +13,7 @@ const LojaInfo = (props) => {
                 source={{uri: props.loja.image_blob}}
             />
             <Text style={textStyle}>Takeback: {props.loja.takeback.toFixed(2)}%</Text>
-            <TouchableOpacity style={buttonStyle}>
+            <TouchableOpacity style={buttonStyle} onPress={() => Linking.openURL(props.loja.url)}>
                 <Text style={buttonText}>Visitar o site</Text>
             </TouchableOpacity>
         </View>
