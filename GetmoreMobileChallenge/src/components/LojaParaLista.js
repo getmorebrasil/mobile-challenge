@@ -7,7 +7,7 @@ const LojaParaLista = (props) => {
     return (
         <TouchableOpacity  
             style={containerStyle}
-            onPress={() => props.onPress(props.loja.id)}
+            onPress={() => props.onPress(props.loja.id,props.loja.name)}
         >
             <Text style={titleStyle}>{props.loja.name}</Text>
             <Image

@@ -37,8 +37,8 @@ class LojasListScreen extends Component {
         return lojas;
     }
 
-    onPressLoja(id) {
-        this.props.getID(id);
+    onPressLoja(id,name) {
+        this.props.getLoja(id,name);
         this.props.navigation.navigate('Loja');
     }
 

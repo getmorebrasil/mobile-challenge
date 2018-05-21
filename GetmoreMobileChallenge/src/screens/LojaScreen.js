@@ -8,12 +8,16 @@ import Footer from '../components/Footer';
 import LojaInfo from '../components/LojaInfo';
 
 class LojaScreen extends Component {
-    static navigationOptions = {
-        title: 'Lojas',
-        headerStyle: {
+    static navigationOptions = ({ navigation }) => {
+        const { params } = navigation.state;
+        
+        return {
+            title: params ? `${params.loja[1]}` : 'Loja',
+            headerStyle: {
             backgroundColor: '#404040',
-        },
-        headerTintColor: '#e6e6e6',
+            },
+            headerTintColor: '#e6e6e6',
+        }
     };
 
     componentWillMount() {
@@ -21,12 +25,16 @@ class LojaScreen extends Component {
         fetch(`http://challenge.getmore.com.br/stores/${this.props.selectedId}`)
             .then(response => response.json())
             .then(loja => this.props.getLojaInfo(loja));
+
+            this.props.navigation.setParams({loja: this.props.selectedId});
+
     }
 
     renderLoja() {
         if (this.props.selectedLoja === null) {
             return <LoadingSection />
         }
+        
         return <LojaInfo loja={this.props.selectedLoja} />;
     }
 
@@ -39,7 +47,7 @@ class LojaScreen extends Component {
     }
 
     render() {
-        
+        console.log(this.props);
         return (
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}>

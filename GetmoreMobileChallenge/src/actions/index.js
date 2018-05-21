@@ -5,10 +5,10 @@ export const getLista = (lojas) => {
     };
 };
 
-export const getID = (id) => {
+export const getLoja = (id,name) => {
     return {
         type: 'select-id',
-        payload: id
+        payload: [id,name]
     };
 };
 
