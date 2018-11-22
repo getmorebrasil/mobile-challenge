@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/layout_bg">
+
+
+        <ImageView
+            android:id="@+id/loja_Image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/layoutNomeLoja"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            app:layout_constraintLeft_toRightOf="@id/loja_Image">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loja: "
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/loja_nomeLoja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nome da loja"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutTakeback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            app:layout_constraintLeft_toRightOf="@id/loja_Image"
+            app:layout_constraintTop_toBottomOf="@+id/layoutNomeLoja">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TakeBack: "
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/loja_takeback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="takeback"
+                android:textSize="20dp" />
+        </LinearLayout>
+</android.support.constraint.ConstraintLayout>

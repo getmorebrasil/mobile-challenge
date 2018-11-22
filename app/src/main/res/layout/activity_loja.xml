@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    tools:context=".LojaActivity">
+
+    <ImageView
+        android:id="@+id/fragment_loja_imagem"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/fragment_loja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loja: "
+        app:layout_constraintTop_toBottomOf="@id/fragment_loja_imagem" />
+
+    <TextView
+        android:id="@+id/fragment_loja_nomeLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nome da loja"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_loja"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loja_imagem" />
+
+    <TextView
+        android:id="@+id/fragment_takeback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="takeback: "
+        app:layout_constraintTop_toBottomOf="@id/fragment_loja" />
+
+    <TextView
+        android:id="@+id/fragment_loja_takeback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAKEBACK"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_takeback"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loja_nomeLoja" />
+
+
+    <TextView
+        android:id="@+id/fragment_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Site: "
+        app:layout_constraintTop_toBottomOf="@id/fragment_takeback" />
+
+    <TextView
+        android:id="@+id/fragment_loja_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SITEE"
+        android:autoLink="web"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_site"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loja_takeback" />
+
+
+    <RatingBar
+        android:id="@+id/fragment_loja_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:secondaryProgressTint="#00000000"
+        android:stepSize="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loja_site" />
+
+    <TextView
+        android:id="@+id/fragment_categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categorias"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_loja_categoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_loja_rating" />
+
+    <ListView
+        android:id="@+id/fragment_loja_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </ListView>
+
+</android.support.constraint.ConstraintLayout>
